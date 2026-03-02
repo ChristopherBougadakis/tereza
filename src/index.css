@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 220 25% 10%;
-    --foreground: 45 30% 95%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
 
-    --card: 220 20% 14%;
-    --card-foreground: 45 30% 95%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 220 20% 14%;
-    --popover-foreground: 45 30% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 43 90% 55%;
-    --primary-foreground: 220 25% 10%;
+    --primary: 0 80% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 18% 20%;
-    --secondary-foreground: 45 30% 90%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 43 90% 55%;
-    --accent-foreground: 220 25% 10%;
+    --accent: 0 80% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 22%;
-    --input: 220 15% 22%;
-    --ring: 43 90% 55%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 80% 50%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 220 25% 8%;
-    --sidebar-foreground: 45 30% 95%;
-    --sidebar-primary: 43 90% 55%;
-    --sidebar-primary-foreground: 220 25% 10%;
-    --sidebar-accent: 220 18% 16%;
-    --sidebar-accent-foreground: 45 30% 95%;
-    --sidebar-border: 220 15% 22%;
-    --sidebar-ring: 43 90% 55%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 0 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 94%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 0 80% 50%;
   }
 }
 
@@ -63,25 +63,34 @@
 }
 
 @layer utilities {
-  .text-gradient-gold {
+  .text-gradient-red {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(43 90% 55%), hsl(38 100% 70%));
+    background-image: linear-gradient(135deg, hsl(0 80% 50%), hsl(350 90% 40%));
   }
 
-  .bg-gradient-gold {
-    background-image: linear-gradient(135deg, hsl(43 90% 55%), hsl(38 85% 48%));
+  .bg-gradient-red {
+    background-image: linear-gradient(135deg, hsl(0 80% 50%), hsl(350 80% 42%));
   }
 
-  .bg-gradient-dark {
-    background-image: linear-gradient(180deg, hsl(220 25% 10%), hsl(220 25% 6%));
+  .bg-dark-section {
+    background-color: hsl(0 0% 6%);
+    color: hsl(0 0% 95%);
   }
 
-  .shadow-gold {
-    box-shadow: 0 0 30px -5px hsl(43 90% 55% / 0.3);
+  .bg-dark-card {
+    background-color: hsl(0 0% 10%);
   }
 
-  .shadow-card {
-    box-shadow: 0 8px 32px -8px hsl(0 0% 0% / 0.4);
+  .shadow-red {
+    box-shadow: 0 0 30px -5px hsl(0 80% 50% / 0.35);
+  }
+
+  .shadow-card-light {
+    box-shadow: 0 4px 24px -4px hsl(0 0% 0% / 0.08);
+  }
+
+  .shadow-card-dark {
+    box-shadow: 0 8px 32px -8px hsl(0 0% 0% / 0.5);
   }
 }
 
