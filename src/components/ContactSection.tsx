@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 bg-secondary/30">
+    <section id="contact" className="py-24 bg-secondary">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -11,8 +11,8 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
-            <span className="text-gradient-gold">Επικοινωνία</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-foreground">
+            <span className="text-gradient-red">Επικοινωνία</span>
           </h2>
           <p className="text-muted-foreground text-lg">
             Βρείτε μας ή καλέστε μας — είμαστε πάντα δίπλα σας.
@@ -32,18 +32,18 @@ const ContactSection = () => {
               { icon: MapPin, label: "Διεύθυνση", value: "Κονδυλάκη 101, Ηράκλειο Κρήτης", href: "https://maps.google.com/?q=Κονδυλάκη+101+Ηράκλειο" },
               { icon: Clock, label: "Ωράριο", value: "Δευ-Σάβ: 08:00-20:00 | Κυρ: Κατόπιν ραντεβού" },
             ].map((item, i) => (
-              <div key={i} className="flex items-start gap-4 bg-card border border-border rounded-xl p-5">
+              <div key={i} className="flex items-start gap-4 bg-background border border-border rounded-xl p-5 shadow-card-light">
                 <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                   <item.icon className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground mb-1">{item.label}</div>
                   {item.href ? (
-                    <a href={item.href} className="font-semibold hover:text-primary transition-colors">
+                    <a href={item.href} className="font-semibold text-foreground hover:text-primary transition-colors">
                       {item.value}
                     </a>
                   ) : (
-                    <div className="font-semibold">{item.value}</div>
+                    <div className="font-semibold text-foreground">{item.value}</div>
                   )}
                 </div>
               </div>
