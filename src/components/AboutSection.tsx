@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FloatingShapes, NoiseTexture } from "./BackgroundDecorations";
 
 const stats = [
   { value: "29+", label: "Χρόνια Εμπειρίας" },
@@ -9,9 +10,11 @@ const stats = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-secondary">
+    <section id="about" className="py-24 bg-secondary relative overflow-hidden">
+      <FloatingShapes variant="light" />
+      <NoiseTexture />
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}

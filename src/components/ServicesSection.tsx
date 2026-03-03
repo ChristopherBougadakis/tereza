@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Lock, Car, Warehouse, KeyRound, Shield, Home, Wrench, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
+import { GridPattern, NoiseTexture } from "./BackgroundDecorations";
 
 import serviceLocks from "@/assets/service-locks.jpg";
 import serviceCar from "@/assets/service-car.jpg";
@@ -23,8 +24,10 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 bg-dark-section">
-      <div className="container">
+    <section id="services" className="py-24 bg-dark-section relative overflow-hidden">
+      <GridPattern variant="dark" />
+      <NoiseTexture />
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
