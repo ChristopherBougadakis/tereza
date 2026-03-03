@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BadgeEuro, Zap, ShieldCheck, Cpu, Award } from "lucide-react";
+import { GridPattern, NoiseTexture } from "./BackgroundDecorations";
 
 const reasons = [
   { icon: BadgeEuro, title: "Προσιτές Τιμές", desc: "Ανταγωνιστικές τιμές χωρίς κρυφές χρεώσεις." },
@@ -11,8 +12,10 @@ const reasons = [
 
 const WhyUsSection = () => {
   return (
-    <section id="why-us" className="py-24 bg-background">
-      <div className="container">
+    <section id="why-us" className="py-24 bg-background relative overflow-hidden">
+      <GridPattern variant="light" />
+      <NoiseTexture />
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
