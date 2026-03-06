@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { BadgeEuro, Zap, ShieldCheck, Cpu, Award } from "lucide-react";
-import { GridPattern, NoiseTexture } from "./BackgroundDecorations";
 
 const reasons = [
   { icon: BadgeEuro, title: "Προσιτές Τιμές", desc: "Ανταγωνιστικές τιμές χωρίς κρυφές χρεώσεις." },
@@ -12,18 +11,17 @@ const reasons = [
 
 const WhyUsSection = () => {
   return (
-    <section id="why-us" className="py-24 bg-background relative overflow-hidden">
-      <GridPattern variant="light" />
-      <NoiseTexture />
-      <div className="container relative z-10">
+    <section id="why-us" className="py-24 bg-background">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-foreground">
-            Γιατί να μας <span className="text-gradient-red">Επιλέξετε</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+            Γιατί να Επιλέξετε τον{" "}
+            <span className="text-gradient-red">Κλειδαρά Παντελή Λυτίνα</span>
           </h2>
         </motion.div>
 
@@ -40,7 +38,7 @@ const WhyUsSection = () => {
               <div className="w-14 h-14 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <r.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="font-bold mb-2 text-foreground">{r.title}</h3>
+              <h3 className="font-bold mb-2">{r.title}</h3>
               <p className="text-sm text-muted-foreground">{r.desc}</p>
             </motion.div>
           ))}

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { FloatingShapes, NoiseTexture } from "./BackgroundDecorations";
 
 const stats = [
   { value: "29+", label: "Χρόνια Εμπειρίας" },
@@ -10,22 +9,20 @@ const stats = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-secondary relative overflow-hidden">
-      <FloatingShapes variant="light" />
-      <NoiseTexture />
+    <section id="about" className="py-24 bg-secondary">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-foreground">
-              Σχετικά με το{" "}
-              <span className="text-gradient-red">Key Shop</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-6">
+              Κλειδαράς{" "}
+              <span className="text-gradient-red">Παντελής Λυτίνας</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Από το <strong className="text-foreground">1997</strong>, το Key Shop αποτελεί σημείο αναφοράς
+              Από το <strong className="text-foreground">1997</strong>, ο Παντελής Λυτίνας αποτελεί σημείο αναφοράς
               στον χώρο της κλειδαράς στο Ηράκλειο Κρήτης. Με 29 χρόνια
               εμπειρίας, προσφέρουμε αξιόπιστες υπηρεσίες ασφαλείας σε όλη
               την Κρήτη.
