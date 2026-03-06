@@ -1,33 +1,41 @@
 import { motion } from "framer-motion";
-import { Lock, Car, Warehouse, KeyRound, Shield, Home, Wrench, Settings } from "lucide-react";
+import { Lock, Car, Footprints, KeyRound, Shield, Home, Wrench, Settings, Watch, Umbrella, Zap, DoorOpen } from "lucide-react";
 import { Link } from "react-router-dom";
-import { GridPattern, NoiseTexture } from "./BackgroundDecorations";
 
-import serviceLocks from "@/assets/service-locks.jpg";
-import serviceCar from "@/assets/service-car.jpg";
-import serviceGarage from "@/assets/service-garage.jpg";
-import serviceSafe from "@/assets/service-safe.jpg";
-import serviceKeys from "@/assets/service-keys.jpg";
-import serviceFlip from "@/assets/service-flip.jpg";
-import serviceRepair from "@/assets/service-repair.jpg";
-
-const services = [
-  { icon: Lock, title: "Αδιάρρηκτες Κλειδαριές & Θωρακισμένες Πόρτες", desc: "Τοποθέτηση κλειδαριών ασφαλείας και θωρακισμένων πορτών τελευταίας τεχνολογίας.", image: serviceLocks },
-  { icon: Car, title: "Immobilizer Αυτοκινήτου / Moto", desc: "Προγραμματισμός και επισκευή immobilizer για όλες τις μάρκες.", image: serviceCar },
-  { icon: Warehouse, title: "Τηλεχειριστήρια Γκαραζόπορτας", desc: "Προγραμματισμός τηλεχειριστηρίων για γκαραζόπορτες κάθε τύπου.", image: serviceGarage },
-  { icon: KeyRound, title: "Χαμένα Κλειδιά Αυτοκινήτου", desc: "Κατασκευή νέων κλειδιών αυτοκινήτου ακόμα και χωρίς το αρχικό.", image: serviceCar },
-  { icon: Shield, title: "Άνοιγμα Χρηματοκιβωτίων", desc: "Ασφαλές άνοιγμα χρηματοκιβωτίων χωρίς ζημιά.", image: serviceSafe },
-  { icon: Home, title: "Αναπαραγωγή Κλειδιών Οικίας", desc: "Ακριβής αναπαραγωγή κλειδιών για κατοικίες και πολυκατοικίες.", image: serviceKeys },
-  { icon: Settings, title: "Μετατροπή σε Αναδιπλούμενα", desc: "Μετατροπή κλειδιών σε πρακτικά αναδιπλούμενα flip key.", image: serviceFlip },
-  { icon: Wrench, title: "Επισκευή Κλειδαριών", desc: "Επισκευή κλειδαριών παντός τύπου με εγγύηση εργασίας.", image: serviceRepair },
+const categories = [
+  {
+    title: "Κλειδαράς & Ασφάλεια",
+    items: [
+      { icon: DoorOpen, text: "Άνοιγμα θυρών & Lockouts (Οικίας/Επιχείρησης)" },
+      { icon: Lock, text: "Αντικατάσταση & Επισκευή κλειδαριών (Standard, Multi-point, Tubular)" },
+      { icon: Shield, text: "Εγκατάσταση θωρακισμένων συστημάτων & Window locks" },
+      { icon: Home, text: "Άνοιγμα & Επισκευή Χρηματοκιβωτίων" },
+    ],
+  },
+  {
+    title: "Αυτοκίνητο & Τεχνολογία",
+    items: [
+      { icon: Car, text: "Αντιγραφή κλειδιών αυτοκινήτου & μηχανής (Παντογραφικά)" },
+      { icon: Zap, text: "Προγραμματισμός Immobilizer & Reprogramming Smart Keys" },
+      { icon: KeyRound, text: "Δημιουργία νέων Key Fobs & Επισκευή τηλεχειριστηρίων" },
+      { icon: Settings, text: "Τηλεχειριστήρια γκαραζόπορτας" },
+    ],
+  },
+  {
+    title: "Accessories & Lifestyle",
+    items: [
+      { icon: Footprints, text: "Περιποίηση Υποδημάτων: Κορδόνια, βαφές, αδιαβροχοποίηση, ορθοπεδικοί πάτοι" },
+      { icon: Wrench, text: "Δερμάτινα Είδη: Κατασκευή/Επισκευή ζωνών & δερμάτινων χερουλιών" },
+      { icon: Watch, text: "Μπαταρίες κλειδιών/ρολογιών, μπρελόκ" },
+      { icon: Umbrella, text: "Ομπρέλες & λοιπά gadgets" },
+    ],
+  },
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 bg-dark-section relative overflow-hidden">
-      <GridPattern variant="dark" />
-      <NoiseTexture />
-      <div className="container relative z-10">
+    <section id="services" className="py-24 bg-background">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,37 +43,35 @@ const ServicesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
-            Οι <span className="text-gradient-red">Υπηρεσίες</span> μας
+            Οι Υπηρεσίες του{" "}
+            <span className="text-gradient-red">Κλειδαρά Παντελή Λυτίνα</span>
           </h2>
-          <p className="text-[hsl(0,0%,60%)] text-lg max-w-xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Πλήρες φάσμα υπηρεσιών κλειδαρά για σπίτι, αυτοκίνητο & επαγγελματικούς χώρους.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {services.map((s, i) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {categories.map((cat, ci) => (
             <motion.div
-              key={i}
+              key={ci}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.07 }}
-              className="group bg-dark-card border border-[hsl(0,0%,18%)] rounded-xl overflow-hidden hover:border-primary/50 hover:shadow-card-dark transition-all duration-300"
+              transition={{ delay: ci * 0.1 }}
+              className="bg-card border border-border rounded-2xl p-8 shadow-card-light hover:shadow-lg transition-shadow"
             >
-              <div className="h-44 overflow-hidden">
-                <img
-                  src={s.image}
-                  alt={s.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-5">
-                <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center mb-3">
-                  <s.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-bold text-base mb-2">{s.title}</h3>
-                <p className="text-sm text-[hsl(0,0%,50%)] leading-relaxed">{s.desc}</p>
-              </div>
+              <h3 className="text-xl font-extrabold mb-6 text-foreground">{cat.title}</h3>
+              <ul className="space-y-4">
+                {cat.items.map((item, ii) => (
+                  <li key={ii} className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <item.icon className="w-4.5 h-4.5 text-primary" />
+                    </div>
+                    <span className="text-sm text-muted-foreground leading-relaxed">{item.text}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
@@ -73,7 +79,7 @@ const ServicesSection = () => {
         <div className="text-center mt-12">
           <Link
             to="/ypiresies"
-            className="inline-flex items-center gap-2 bg-gradient-red text-primary-foreground px-8 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 bg-gradient-red text-primary-foreground px-8 py-3.5 rounded-xl font-bold hover:opacity-90 transition-opacity shadow-red"
           >
             Δείτε Αναλυτικά τις Υπηρεσίες
           </Link>
