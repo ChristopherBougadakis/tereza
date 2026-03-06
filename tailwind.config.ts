@@ -80,12 +80,17 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "scroll-reverse": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        scroll: "scroll 30s linear infinite",
+        scroll: "scroll 35s linear infinite",
+        "scroll-reverse": "scroll-reverse 40s linear infinite",
       },
     },
   },
