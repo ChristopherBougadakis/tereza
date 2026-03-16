@@ -120,21 +120,21 @@ const Navbar = () => {
                   </a>
                 )
               )}
-              <div className="grid grid-cols-2 gap-3 w-full">
+              <div className="flex flex-col gap-3 w-full">
                 <a
                   href="tel:+306944788286"
-                  className="flex items-center justify-center gap-2 bg-gradient-red text-primary-foreground px-4 py-3 rounded-lg font-bold text-sm"
+                  className="flex items-center justify-center gap-2 bg-gradient-red text-primary-foreground px-4 py-3.5 rounded-lg font-bold text-base"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-5 h-5" />
                   694 478 82 86
                 </a>
                 <a
                   href="https://www.google.com/maps/dir/?api=1&destination=Κονδυλάκη+101,+Ηράκλειο,+Κρήτη,+Ελλάδα&travelmode=driving"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-card border-2 border-primary/40 text-primary px-4 py-3 rounded-lg font-bold text-sm hover:bg-primary/10 transition-colors"
+                  className="flex items-center justify-center gap-2 bg-card border-2 border-primary/40 text-primary px-4 py-3.5 rounded-lg font-bold text-base hover:bg-primary/10 transition-colors"
                 >
-                  <MapPin className="w-4 h-4" />
+                  <MapPin className="w-5 h-5" />
                   Οδηγίες
                 </a>
               </div>
