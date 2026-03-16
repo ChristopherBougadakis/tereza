@@ -14,4 +14,4 @@ User-agent: *
 Allow: /
 Disallow: /src/
 
-Sitemap: https://klidarasiraklio.gr/sitemap.xml
+Sitemap: https://www.pantelis-kleidaras.gr/sitemap.xml
