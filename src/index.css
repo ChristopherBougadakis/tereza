@@ -80,6 +80,11 @@
   .shadow-card-light {
     box-shadow: 0 4px 24px -4px hsl(0 0% 0% / 0.06);
   }
+
+  .bg-dark-section {
+    background-color: hsl(0 0% 8%);
+    color: hsl(0 0% 90%);
+  }
 }
 
 html {

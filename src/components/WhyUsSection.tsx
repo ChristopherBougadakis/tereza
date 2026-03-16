@@ -11,7 +11,7 @@ const reasons = [
 
 const WhyUsSection = () => {
   return (
-    <section id="why-us" className="py-24 bg-background">
+    <section id="why-us" className="py-24 bg-dark-section">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -19,9 +19,9 @@ const WhyUsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
-            Γιατί να Επιλέξετε τον{" "}
-            <span className="text-gradient-red">Κλειδαρά Παντελή Λυτίνα</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-white">
+            Γιατι να Επιλεξετε{" "}
+            <span className="text-gradient-red">Εμας</span>
           </h2>
         </motion.div>
 
@@ -35,11 +35,11 @@ const WhyUsSection = () => {
               transition={{ delay: i * 0.08 }}
               className="text-center"
             >
-              <div className="w-14 h-14 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <div className="w-14 h-14 mx-auto rounded-full bg-primary/20 flex items-center justify-center mb-4 border border-primary/30">
                 <r.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="font-bold mb-2">{r.title}</h3>
-              <p className="text-sm text-muted-foreground">{r.desc}</p>
+              <h3 className="font-bold mb-2 text-white">{r.title}</h3>
+              <p className="text-sm text-white/50">{r.desc}</p>
             </motion.div>
           ))}
         </div>

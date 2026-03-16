@@ -4,37 +4,52 @@ import { Link } from "react-router-dom";
 
 const categories = [
   {
-    title: "Κλειδαράς & Ασφάλεια",
+    title: "Υπηρεσίες Κλειδαρά",
     items: [
-      { icon: DoorOpen, text: "Άνοιγμα θυρών & Lockouts (Οικίας/Επιχείρησης)" },
-      { icon: Lock, text: "Αντικατάσταση & Επισκευή κλειδαριών (Standard, Multi-point, Tubular)" },
-      { icon: Shield, text: "Εγκατάσταση θωρακισμένων συστημάτων & Window locks" },
-      { icon: Home, text: "Άνοιγμα & Επισκευή Χρηματοκιβωτίων" },
+      { icon: Lock, text: "Αλλαγή κωδικού κλειδαριάς (Lock rekeying)" },
+      { icon: KeyRound, text: "Αντιγραφή κλειδιών αυτοκινήτου" },
+      { icon: Home, text: "Αντιγραφή κλειδιών κτιρίου" },
+      { icon: Settings, text: "Παντογραφικά κλειδιά" },
+      { icon: Lock, text: "Αντιγραφή πολυσημειακών κλειδιών" },
+      { icon: KeyRound, text: "Αντιγραφή tubular κλειδιών" },
+      { icon: Lock, text: "Αντιγραφή κωδικοποιημένων κλειδιών" },
+      { icon: KeyRound, text: "Αντιγραφή standard κλειδιών" },
     ],
   },
   {
-    title: "Αυτοκίνητο & Τεχνολογία",
+    title: "Εγκαταστάσεις & Επισκευές",
     items: [
-      { icon: Car, text: "Αντιγραφή κλειδιών αυτοκινήτου & μηχανής (Παντογραφικά)" },
-      { icon: Zap, text: "Προγραμματισμός Immobilizer & Reprogramming Smart Keys" },
-      { icon: KeyRound, text: "Δημιουργία νέων Key Fobs & Επισκευή τηλεχειριστηρίων" },
-      { icon: Settings, text: "Τηλεχειριστήρια γκαραζόπορτας" },
+      { icon: Wrench, text: "Γενικές επισκευές" },
+      { icon: DoorOpen, text: "Εγκατάσταση κλειδαριών" },
+      { icon: DoorOpen, text: "Εγκατάσταση κλειδαριών πόρτας" },
+      { icon: Shield, text: "Κλειδαριές θωρακισμένων πορτών" },
+      { icon: Home, text: "Κλειδαριές παραθύρων" },
+      { icon: Shield, text: "Άνοιγμα, εγκατάσταση και επισκευή χρηματοκιβωτίων" },
+      { icon: Car, text: "Άνοιγμα αυτοκινήτου (Car lockouts)" },
+      { icon: DoorOpen, text: "Άνοιγμα κτιρίου (Building lockouts)" },
+      { icon: Wrench, text: "Επισκευή υλικού κλειδαριών" },
     ],
   },
   {
-    title: "Accessories & Lifestyle",
+    title: "Τεχνολογία & Αξεσουάρ",
     items: [
-      { icon: Footprints, text: "Περιποίηση Υποδημάτων: Κορδόνια, βαφές, αδιαβροχοποίηση, ορθοπεδικοί πάτοι" },
-      { icon: Wrench, text: "Δερμάτινα Είδη: Κατασκευή/Επισκευή ζωνών & δερμάτινων χερουλιών" },
-      { icon: Watch, text: "Μπαταρίες κλειδιών/ρολογιών, μπρελόκ" },
-      { icon: Umbrella, text: "Ομπρέλες & λοιπά gadgets" },
+      { icon: Car, text: "Δημιουργία νέων key fobs" },
+      { icon: Zap, text: "Προγραμματισμός ψηφιακών και τηλεχειριστήριων αυτοκινήτου" },
+      { icon: Settings, text: "Κοντρόλ αυτοκινήτου-μηχανής-γκαραζόπορτας" },
+      { icon: Watch, text: "Μπαταρίες κλειδιών-ρολογιών-παιχνιδιών" },
+      { icon: KeyRound, text: "Θήκες σιλικόνης κλειδιών με τηλεχειρισμό" },
+      { icon: Footprints, text: "Αξεσουάρ υποδημάτων: κορδόνια, βαφές, καθαριστικά, αδιαβροχοποίηση, πάτοι" },
+      { icon: Wrench, text: "Δερμάτινα χερούλια" },
+      { icon: Wrench, text: "Κατασκευή-επισκευή δερμάτινων ζωνών" },
+      { icon: Umbrella, text: "Μπρελόκ μάρκες αυτοκινήτων, δερμάτινα ζωάκια, δερμάτινες θήκες" },
+      { icon: Umbrella, text: "Ομπρέλες" },
     ],
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 bg-background">
+    <section id="services" className="py-24 bg-secondary">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,8 +58,7 @@ const ServicesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
-            Οι Υπηρεσίες του{" "}
-            <span className="text-gradient-red">Κλειδαρά Παντελή Λυτίνα</span>
+            <span className="text-gradient-red">Υπηρεσίες</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Πλήρες φάσμα υπηρεσιών κλειδαρά για σπίτι, αυτοκίνητο & επαγγελματικούς χώρους.

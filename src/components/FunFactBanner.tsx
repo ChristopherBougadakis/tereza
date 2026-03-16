@@ -3,7 +3,7 @@ import { AlertTriangle, Phone } from "lucide-react";
 
 const FunFactBanner = () => {
   return (
-    <section className="py-16 bg-secondary border-y border-border">
+    <section className="py-16 bg-dark-section border-y border-white/10">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -12,11 +12,11 @@ const FunFactBanner = () => {
           className="max-w-3xl mx-auto text-center"
         >
           <AlertTriangle className="w-10 h-10 text-primary mx-auto mb-4" />
-          <h3 className="text-2xl md:text-3xl font-extrabold mb-4">
+          <h3 className="text-2xl md:text-3xl font-extrabold mb-4 text-white">
             Το ξέρατε;
           </h3>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-            <strong className="text-foreground">2 στις 3 ληστείες</strong>{" "}
+          <p className="text-lg md:text-xl text-white/60 mb-8 leading-relaxed">
+            <strong className="text-white">2 στις 3 ληστείες</strong>{" "}
             συμβαίνουν σε πόρτες πρώτου ορόφου. Αναβαθμίστε την ασφάλεια του
             σπιτιού σας σήμερα!
           </p>

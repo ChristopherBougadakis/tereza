@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Lock, Car, Warehouse, KeyRound, Shield, Home, Wrench, Settings, Phone, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
@@ -113,6 +114,18 @@ const services = [
 ];
 
 const ServicesPage = () => {
+  useEffect(() => {
+    document.title = "Υπηρεσίες Κλειδαρά Ηράκλειο | Παντελής Λυτίνας — 24/7";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.setAttribute("content", "Υπηρεσίες κλειδαρά στο Ηράκλειο Κρήτης: αντιγραφή κλειδιών, κλειδαριές ασφαλείας, immobilizer αυτοκινήτου, χρηματοκιβώτια, θωρακισμένες πόρτες, τηλεχειριστήρια γκαραζόπορτας. ☎ 694 478 82 86");
+    }
+    return () => {
+      document.title = "Κλειδαράς Ηράκλειο | Παντελής Λυτίνας | 24/7 ☎ 694 478 82 86";
+      if (meta) meta.setAttribute("content", "Κλειδαράς Παντελής Λυτίνας στο Ηράκλειο Κρήτης από το 1997. Αντιγραφή κλειδιών, αλλαγή κλειδαριάς, κλειδαράς αυτοκινήτου, immobilizer, χρηματοκιβώτια, κλειδαριές ασφαλείας. Άμεση εξυπηρέτηση 24/7 — ☎ 694 478 82 86.");
+    };
+  }, []);
+
   return (
     <>
       <Navbar />

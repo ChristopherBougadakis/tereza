@@ -9,7 +9,7 @@ const stats = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-secondary">
+    <section id="about" className="py-24 bg-background">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -18,12 +18,12 @@ const AboutSection = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6">
-              Κλειδαράς{" "}
-              <span className="text-gradient-red">Παντελής Λυτίνας</span>
+              Εμπειρία &{" "}
+              <span className="text-gradient-red">Αξιοπιστία</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Από το <strong className="text-foreground">1997</strong>, ο Παντελής Λυτίνας αποτελεί σημείο αναφοράς
-              στον χώρο της κλειδαράς στο Ηράκλειο Κρήτης. Με 29 χρόνια
+              Από το <strong className="text-foreground">1997</strong>, το εργαστήριό μας αποτελεί σημείο αναφοράς
+              στον χώρο της κλειθροποιίας στο Ηράκλειο Κρήτης. Με 29 χρόνια
               εμπειρίας, προσφέρουμε αξιόπιστες υπηρεσίες ασφαλείας σε όλη
               την Κρήτη.
             </p>

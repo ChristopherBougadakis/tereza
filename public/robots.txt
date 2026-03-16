@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /src/
+
+Sitemap: https://klidarasiraklio.gr/sitemap.xml

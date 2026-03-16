@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
-import { Phone, Menu, X, Key } from "lucide-react";
+import { Phone, Menu, X, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { label: "Αρχική", href: "/" },
   { label: "Υπηρεσίες", href: "/ypiresies" },
-  { label: "Γκαλερί", href: "/gallery" },
-  { label: "Προϊόντα", href: "/proionta" },
   { label: "Επικοινωνία", href: "/#contact" },
 ];
 
@@ -15,6 +13,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -22,12 +21,39 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = (href: string) => {
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
     setOpen(false);
-    if (href.startsWith("/#")) {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+      window.scrollTo({ top: 0 });
+    }
+  };
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    setOpen(false);
+    if (href === "/") {
+      e.preventDefault();
       if (location.pathname === "/") {
-        const el = document.querySelector(href.replace("/", ""));
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        navigate("/");
+        window.scrollTo({ top: 0 });
+      }
+    } else if (href.startsWith("/#")) {
+      e.preventDefault();
+      const hash = href.slice(1); // "#contact"
+      if (location.pathname === "/") {
+        const el = document.querySelector(hash);
         el?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate("/");
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          el?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
       }
     }
   };
@@ -37,7 +63,7 @@ const Navbar = () => {
       {/* Top bar with name & phone — always visible */}
       <div className="bg-foreground text-background">
         <div className="container flex items-center justify-between py-2 text-sm">
-          <span className="font-semibold tracking-wide">Παντελής Λυτίνας — Κλειδαράς</span>
+          <span className="font-semibold tracking-wide">Κλειδαράς Ηρακλείου από το 1997</span>
           <a href="tel:+306944788286" className="flex items-center gap-1.5 font-bold hover:opacity-80 transition-opacity">
             <Phone className="w-3.5 h-3.5" />
             694 478 82 86
@@ -46,36 +72,26 @@ const Navbar = () => {
       </div>
 
       <div className="container flex items-center justify-between h-14 md:h-16">
-        <Link to="/" className="flex items-center gap-2">
-          <Key className="w-6 h-6 text-primary" />
-          <span className="text-lg font-extrabold tracking-tight text-foreground">
-            Παντελής <span className="text-gradient-red">Λυτίνας</span>
-          </span>
-        </Link>
+        <a href="/" onClick={handleLogoClick} className="flex items-center gap-1">
+          <span className="text-xl font-extrabold tracking-tight text-foreground">Παντελής</span>
+          <span className="text-xl font-extrabold tracking-tight text-gradient-red">Λυτίνας</span>
+        </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((l) =>
-            l.href.startsWith("/#") ? (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => handleClick(l.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {l.label}
-              </a>
-            ) : (
-              <Link
-                key={l.href}
-                to={l.href}
-                className={`text-sm font-medium transition-colors ${
-                  location.pathname === l.href ? "text-primary" : "text-muted-foreground hover:text-primary"
-                }`}
-              >
-                {l.label}
-              </Link>
-            )
-          )}
+          {navLinks.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={(e) => handleNavClick(e, l.href)}
+              className={`text-sm font-medium transition-colors ${
+                location.pathname === l.href && !l.href.startsWith("/#")
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-primary"
+              }`}
+            >
+              {l.label}
+            </a>
+          ))}
         </div>
 
         <a
@@ -104,34 +120,35 @@ const Navbar = () => {
             className="md:hidden overflow-hidden bg-background border-b border-border"
           >
             <div className="container py-4 flex flex-col gap-4">
-              {navLinks.map((l) =>
-                l.href.startsWith("/#") ? (
+              {navLinks.map((l) => (
                   <a
                     key={l.href}
                     href={l.href}
-                    onClick={() => handleClick(l.href)}
+                    onClick={(e) => handleNavClick(e, l.href)}
                     className="text-base font-medium text-foreground hover:text-primary transition-colors"
                   >
                     {l.label}
                   </a>
-                ) : (
-                  <Link
-                    key={l.href}
-                    to={l.href}
-                    onClick={() => setOpen(false)}
-                    className="text-base font-medium text-foreground hover:text-primary transition-colors"
-                  >
-                    {l.label}
-                  </Link>
                 )
               )}
-              <a
-                href="tel:+306944788286"
-                className="flex items-center justify-center gap-2 bg-gradient-red text-primary-foreground px-5 py-3 rounded-lg font-bold"
-              >
-                <Phone className="w-4 h-4" />
-                📞 694 478 82 86
-              </a>
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href="tel:+306944788286"
+                  className="flex items-center justify-center gap-2 bg-gradient-red text-primary-foreground px-4 py-3 rounded-lg font-bold"
+                >
+                  <Phone className="w-4 h-4" />
+                  694 478 82 86
+                </a>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Κονδυλάκη+101,+Ηράκλειο,+Κρήτη,+Ελλάδα&travelmode=driving"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-card border-2 border-primary/40 text-primary px-4 py-3 rounded-lg font-bold hover:bg-primary/10 transition-colors"
+                >
+                  <MapPin className="w-4 h-4" />
+                  Οδηγίες
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

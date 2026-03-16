@@ -5,8 +5,8 @@ import AboutSection from "@/components/AboutSection";
 import WhyUsSection from "@/components/WhyUsSection";
 import EquipmentSection from "@/components/EquipmentSection";
 import ClientsSection from "@/components/ClientsSection";
+import ReviewsSection from "@/components/ReviewsSection";
 import FunFactBanner from "@/components/FunFactBanner";
-import InstagramSection from "@/components/InstagramSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
@@ -22,8 +22,8 @@ const Index = () => {
         <WhyUsSection />
         <EquipmentSection />
         <ClientsSection />
+        <ReviewsSection />
         <FunFactBanner />
-        <InstagramSection />
         <ContactSection />
       </main>
       <Footer />
