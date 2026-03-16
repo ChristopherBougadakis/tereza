@@ -3,19 +3,19 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://klidarasiraklio.gr</loc>
+    <loc>https://www.pantelis-kleidaras.gr</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="el" href="https://klidarasiraklio.gr" />
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.pantelis-kleidaras.gr" />
   </url>
 
   <url>
-    <loc>https://klidarasiraklio.gr/ypiresies</loc>
+    <loc>https://www.pantelis-kleidaras.gr/ypiresies</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="el" href="https://klidarasiraklio.gr/ypiresies" />
+    <xhtml:link rel="alternate" hreflang="el" href="https://www.pantelis-kleidaras.gr/ypiresies" />
   </url>
 
 
