@@ -60,17 +60,6 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/98 backdrop-blur-md shadow-card-light" : "bg-background"} border-b border-border`}>
-      {/* Top bar with name & phone — always visible */}
-      <div className="bg-foreground text-background">
-        <div className="container flex items-center justify-between py-2 text-sm">
-          <span className="font-semibold tracking-wide">Κλειδαράς Ηρακλείου από το 1997</span>
-          <a href="tel:+306944788286" className="flex items-center gap-1.5 font-bold hover:opacity-80 transition-opacity">
-            <Phone className="w-3.5 h-3.5" />
-            694 478 82 86
-          </a>
-        </div>
-      </div>
-
       <div className="container flex items-center justify-between h-14 md:h-16">
         <a href="/" onClick={handleLogoClick} className="flex items-center gap-1">
           <span className="text-xl font-extrabold tracking-tight text-foreground">Παντελής</span>
@@ -131,10 +120,10 @@ const Navbar = () => {
                   </a>
                 )
               )}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-3 w-full">
                 <a
                   href="tel:+306944788286"
-                  className="flex items-center justify-center gap-2 bg-gradient-red text-primary-foreground px-4 py-3 rounded-lg font-bold"
+                  className="flex items-center justify-center gap-2 bg-gradient-red text-primary-foreground px-4 py-3 rounded-lg font-bold text-sm"
                 >
                   <Phone className="w-4 h-4" />
                   694 478 82 86
@@ -143,7 +132,7 @@ const Navbar = () => {
                   href="https://www.google.com/maps/dir/?api=1&destination=Κονδυλάκη+101,+Ηράκλειο,+Κρήτη,+Ελλάδα&travelmode=driving"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-card border-2 border-primary/40 text-primary px-4 py-3 rounded-lg font-bold hover:bg-primary/10 transition-colors"
+                  className="flex items-center justify-center gap-2 bg-card border-2 border-primary/40 text-primary px-4 py-3 rounded-lg font-bold text-sm hover:bg-primary/10 transition-colors"
                 >
                   <MapPin className="w-4 h-4" />
                   Οδηγίες
