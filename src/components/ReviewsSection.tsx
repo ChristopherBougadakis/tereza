@@ -136,7 +136,7 @@ const ReviewsSection = () => (
 
       <div className="text-center">
         <a
-          href="https://www.google.com/maps/search/?api=1&query=Παντελής+Λυτίνας+Κλειδαράς+Ηράκλειο"
+          href="https://www.google.com/maps/search/?api=1&query=Παντελής+Λύτινας+Κλειδαράς+Ηράκλειο"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 border-2 border-primary/40 text-primary px-6 py-3 rounded-xl font-bold text-sm hover:bg-primary/5 transition-colors"

@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-1 mb-3">
               <span className="font-extrabold text-lg">Παντελής</span>
-              <span className="font-extrabold text-lg text-primary">Λυτίνας</span>
+              <span className="font-extrabold text-lg text-primary">Λύτινας</span>
             </div>
             <p className="text-sm text-background/60 mb-3">
               Επαγγελματικές υπηρεσίες κλειδαρά στο Ηράκλειο Κρήτης από το 1997.
@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-background/15 pt-6 text-center text-sm text-background/40">
-          © {new Date().getFullYear()} Κλειδαράς Ηράκλειο — Παντελής Λυτίνας | Key Shop Ηρακλείου. Με επιφύλαξη παντός δικαιώματος.
+          © {new Date().getFullYear()} Κλειδαράς Ηράκλειο — Παντελής Λύτινας | Key Shop Ηρακλείου. Με επιφύλαξη παντός δικαιώματος.
         </div>
       </div>
     </footer>

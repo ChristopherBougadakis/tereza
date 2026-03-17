@@ -63,7 +63,7 @@ const ContactSection = () => {
             {/* Pinned map — Κονδυλάκη 101, Ηράκλειο */}
             <div className="relative w-full" style={{ minHeight: 340 }}>
               <iframe
-                title="Κλειδαράς Παντελής Λυτίνας — Κονδυλάκη 101, Ηράκλειο Κρήτης"
+                title="Κλειδαράς Παντελής Λύτινας — Κονδυλάκη 101, Ηράκλειο Κρήτης"
                 src="https://maps.google.com/maps?q=Κονδυλάκη+101,+Ηράκλειο,+Κρήτη&output=embed&z=17&hl=el"
                 width="100%"
                 height="340"

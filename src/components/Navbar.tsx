@@ -63,7 +63,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between h-14 md:h-16">
         <a href="/" onClick={handleLogoClick} className="flex items-center gap-1">
           <span className="text-xl font-extrabold tracking-tight text-foreground">Παντελής</span>
-          <span className="text-xl font-extrabold tracking-tight text-gradient-red">Λυτίνας</span>
+          <span className="text-xl font-extrabold tracking-tight text-gradient-red">Λύτινας</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">

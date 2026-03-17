@@ -28,7 +28,7 @@ const HeroSection = () => {
           </p>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-6 text-white">
-            Παντελής{" "}<span className="text-gradient-red">Λυτίνας</span>
+            Παντελής{" "}<span className="text-gradient-red">Λύτινας</span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/60 max-w-lg mx-auto mb-10">
