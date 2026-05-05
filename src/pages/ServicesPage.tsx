@@ -115,14 +115,38 @@ const services = [
 
 const ServicesPage = () => {
   useEffect(() => {
-    document.title = "Υπηρεσίες Κλειδαρά Ηράκλειο | Παντελής Λύτινας — 24/7";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "Υπηρεσίες κλειδαρά στο Ηράκλειο Κρήτης: αντιγραφή κλειδιών, κλειδαριές ασφαλείας, immobilizer αυτοκινήτου, χρηματοκιβώτια, θωρακισμένες πόρτες, τηλεχειριστήρια γκαραζόπορτας. ☎ 694 478 82 86");
-    }
+    const HOME_TITLE = "Κλειδαράς Ηράκλειο | Παντελής Λύτινας | 24/7 ☎ 694 478 82 86";
+    const HOME_DESC = "Κλειδαράς Παντελής Λύτινας στο Ηράκλειο Κρήτης από το 1997. Αντιγραφή κλειδιών, αλλαγή κλειδαριάς, κλειδαράς αυτοκινήτου, immobilizer, χρηματοκιβώτια, κλειδαριές ασφαλείας. Άμεση εξυπηρέτηση 24/7 — ☎ 694 478 82 86.";
+    const HOME_URL = "https://www.pantelis-kleidaras.gr";
+
+    const SERVICES_TITLE = "Υπηρεσίες Κλειδαρά Ηράκλειο | Παντελής Λύτινας — 24/7";
+    const SERVICES_DESC = "Υπηρεσίες κλειδαρά στο Ηράκλειο Κρήτης: αντιγραφή κλειδιών, κλειδαριές ασφαλείας, immobilizer αυτοκινήτου, χρηματοκιβώτια, θωρακισμένες πόρτες, τηλεχειριστήρια γκαραζόπορτας. ☎ 694 478 82 86";
+    const SERVICES_URL = "https://www.pantelis-kleidaras.gr/ypiresies";
+
+    document.title = SERVICES_TITLE;
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", SERVICES_DESC);
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (canonical) canonical.setAttribute("href", SERVICES_URL);
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute("content", SERVICES_URL);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", SERVICES_TITLE);
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute("content", SERVICES_DESC);
+
     return () => {
-      document.title = "Κλειδαράς Ηράκλειο | Παντελής Λύτινας | 24/7 ☎ 694 478 82 86";
-      if (meta) meta.setAttribute("content", "Κλειδαράς Παντελής Λύτινας στο Ηράκλειο Κρήτης από το 1997. Αντιγραφή κλειδιών, αλλαγή κλειδαριάς, κλειδαράς αυτοκινήτου, immobilizer, χρηματοκιβώτια, κλειδαριές ασφαλείας. Άμεση εξυπηρέτηση 24/7 — ☎ 694 478 82 86.");
+      document.title = HOME_TITLE;
+      if (metaDesc) metaDesc.setAttribute("content", HOME_DESC);
+      if (canonical) canonical.setAttribute("href", HOME_URL);
+      if (ogUrl) ogUrl.setAttribute("content", HOME_URL);
+      if (ogTitle) ogTitle.setAttribute("content", HOME_TITLE);
+      if (ogDesc) ogDesc.setAttribute("content", HOME_DESC);
     };
   }, []);
 
